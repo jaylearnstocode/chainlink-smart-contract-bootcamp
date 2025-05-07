@@ -1,0 +1,36 @@
+Script 13 - 开始在hardhat框架下进行智能合约开发
+
+// 1 创建一个project (项目名称，编程语言，牌照），这个project的所有信息会在执行下面这一行后，放在 package.json 文件中
+npm init
+    // 创建了一个package.json文件，相当于maven的.xml文件
+
+// 2 安装区块链项目需要的所有包，储存在node_modules文件夹中，也就是hardhat框架
+yarn add --dev hardhat
+    // 创建了node_modules文件夹
+    // 含有@的是外部库，不含@的是hardhat官方库
+
+// npm == yarn == npx
+
+// 创建一个项目
+yarn hardhat
+    // 创建了一个contracts文件夹供我们存放智能合约，有一个样板智能合约Lock.sol
+    // 创建了一个ignition文件夹供我们存放脚本，比如我们想写一个部署合约的脚本，就可以存在这
+    // 创建了一个test文件夹供我们写test文件
+    // 创建了.gitignore
+    // 创建了 hardhat.config.js， 是所有我们写的脚本的入口，它包含决定脚本如何与区块链交互的配置
+    // 创建了一个Readme
+
+    // 第一次execute “yarn hardhat"是帮助创建整个项目
+    // 第二次execute “yarn hardhat"会出现dashbaord供我们选择，比如help, config, network等等
+
+// 可以看到可用于测试的20个accounts
+yarn hardhat node
+
+// 可以compile contracts folder 中的智能合约
+yarn hardhat compile
+    // 编译完生成cache文件夹和artifacts文件夹
+    // cache文件夹不重要
+    // artifacts中存的是字节码，类似java的.class文件）
+
+
+

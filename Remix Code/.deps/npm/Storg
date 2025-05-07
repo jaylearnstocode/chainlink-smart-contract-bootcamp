@@ -1,0 +1,73 @@
+import React, {useState, useContext} from 'react'
+
+const storg = React.createContext({})
+
+const localStorageKey = '_storg'
+
+function useStorg(){
+  var ctx = useContext(storg)
+  return ctx||{}
+}
+
+function createActions(store,actions){
+  if(typeof actions!=='object') return {}
+  var r = {}
+  for (const key in actions) {
+    let value = actions[key]
+    if(typeof value!=='function') continue
+    if (actions.hasOwnProperty(key)) {
+      r[key] = function(a,b,c,d,e) {
+        return value(store,a,b,c,d,e)
+      } 
+    }
+  }
+  return r
+}
+
+function StorgProvider(props){
+
+  const [store,setStore] = useState({})
+  const [state,setState] = useState({})
+
+  function setTheState(a){
+    if(typeof a!=='object') return
+    setState({...state,...a})
+  }
+  function setTheStore(a){
+    if(typeof a!=='object') return
+    let newStore = {...store,...a}
+    setStore(newStore)
+    localStorage.setItem(localStorageKey, JSON.stringify(newStore))
+  }
+  async function hyrdateStore(){
+    const theStore = await getStore()
+    if(theStore) setStore(theStore)
+  }
+
+  return <storg.Provider value={{
+    ...store,
+    ...state,
+    actions: createActions({
+      ...state,
+      setState:setTheStore,
+      setStore:setTheStore,
+    }, props.actions || {}),
+    setState:setTheState,
+    setStore:setTheStore,
+    hyrdateStore, 
+  }}>
+    {props.children}
+  </storg.Provider>
+}
+
+export {useStorg, StorgProvider}
+
+export async function getStore(){
+  const theStore = await localStorage.getItem(localStorageKey)
+  if (theStore) {
+    try {
+      const parsedStore = JSON.parse(theUI)
+      if(parsedStore) return parsedStore
+    } catch(e){}
+  }
+}

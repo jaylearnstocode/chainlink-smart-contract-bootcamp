@@ -1,0 +1,9 @@
+Script12 - 如果通过编程与测试网交互
+
+首先通过alchemy创建一个app，里面对应有你想用的链的rpc_url，然后把它放入.env
+然后通过node Deploy2.js 部署
+在etherscan上面的contract可以verify contract。具体方式就是把code复制上去然后它匹配bytecode后就会有绿勾
+然后就可以在etherscan上像Remix那样通过点击函数来操作了！
+
+然后Alchemy的dashboard会提供使用这一节点服务的app的所有动向
+比如调用函数发送的tx在mempool中的状态，平均tx成功率，吞吐量等等，是后续智能合约debug，运维，和看统计数据的看板
