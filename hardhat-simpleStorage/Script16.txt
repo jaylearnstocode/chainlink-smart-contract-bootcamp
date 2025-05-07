@@ -1,0 +1,11 @@
+Script 16 - 一些小知识点（重要程度和实用性稍低）
+
+// 本地节点
+yarn hardhat node
+    // 这些本地节点和hardhat network 还不太一样，它是 localhost 的节点，运行在127.0.0.1上，但是账户公钥和私钥是一样的，Hardhat帮忙配置的
+    // 但有些细微区别就是了，看 “6-10 Hardhat 本地节点“
+
+// 一步一步的操作区块链
+yarn hardhat console
+    // 然后可以一步一步的运行code 看 “6-11 Hardhat 控制台”
+

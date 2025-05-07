@@ -7,6 +7,11 @@ require("@nomicfoundation/hardhat-verify");
 // 2 为了用process.env.Seqolia_RPC_URL，要导入包进来
 require("dotenv").config();
 
+// referred from Script 15, include 需要的tool，随后可以通过 yarn hardhat 看到这些tools
+require("./tasks/block-number");
+require("./tasks/accounts");
+
+
 const Sepolia_RPC_URL = process.env.Sepolia_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
