@@ -1,0 +1,17 @@
+hardhat-fundme script 1
+
+hardhat-fundme 学习 advanced project framework。之前的 hardhat-simpleStorage 学习的是 basic project framework
+
+所谓 framework 其实就是左边目录中的东西
+
+里面有几个新东西：
+
+    .npmignore - 和.gitignore很像，都是忽略掉一些文件。.npmignore目的是如果你想把这个project打包成一个npm包的话，会忽略掉特定文件
+
+    eslint - 自动监测javascript中的所有warning (但不常用，不好用)
+
+    solhint - 自动监测solidity中的所有warning
+    下载：yarn add solhint --dev
+    使用：yarn solhint ./aContract.sol
+         yarn solhint *.sol
+

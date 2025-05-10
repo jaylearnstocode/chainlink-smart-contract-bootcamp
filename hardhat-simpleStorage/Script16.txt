@@ -9,3 +9,29 @@ yarn hardhat node
 yarn hardhat console
     // 然后可以一步一步的运行code 看 “6-11 Hardhat 控制台”
 
+
+Script 18.1 
+
+// 通过以下命令安装监测gas fee的包
+yarn add hardhat-gas-reporter --dev
+
+然后在hardhat.config.js中include hardhat-gas-reporter包，然后在module中加入gasReporter
+
+怎么run：yarn hardhat test ；出来的test结果都会有gas report(但是仅展示在test中被test过的函数以及总gas)
+
+
+Script 18.2
+
+// 做 test coverage
+
+// 安装 做coverage test 的 包
+yarn add --dev solidity-coverage
+
+然后在hardhat.config.js中include solidity-coverage
+
+怎么run：yarn hardhat coverage ; 然后我们主要关注uncovered lines，然后对这些lines做test
+
+整个hardhat-simpleStorage完成！
+
+
+

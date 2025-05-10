@@ -11,10 +11,17 @@ require("dotenv").config();
 require("./tasks/block-number");
 require("./tasks/accounts");
 
+// referred from Script 18.1, include gas reporter
+require("hardhat-gas-reporter");
+
+// referred from Script 18.2, include solidity coverage
+require("solidity-coverage");
+
 
 const Sepolia_RPC_URL = process.env.Sepolia_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -30,6 +37,15 @@ module.exports = {
 
   etherscan: {
     apiKey: ETHERSCAN_API_KEY   // 6 加入etherscan api用于自动验证我们部署上去的合约
+  },
+
+  gasReporter: {
+    enabled: true, // 7 开启gas reporter
+    outputFile: "gas-report.txt", // 8 输出文件
+    noColors: true, // 9 不显示颜色
+    currency: "USD", // 10 显示货币
+    coinmarketcap: COINMARKETCAP_API_KEY, // 11 通过cmc的api展示usd计价的gas fee，这里主要的作用是用cmc的api获取eth/usd汇率
+    token: "ETH"  // 这里设置layer1的主要代币就会显示部署在那个链上的gas fee
   },
   
   solidity: "0.8.8"
