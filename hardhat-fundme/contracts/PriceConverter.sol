@@ -2,8 +2,6 @@
 pragma solidity ^0.8.0;
 
 
-// Script 7
-
 // 这里学习创建一个library
 
     // library中的所有函数都必须是internal的

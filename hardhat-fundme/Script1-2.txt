@@ -1,0 +1,44 @@
+hardhat-fundme Script 1
+
+hardhat-fundme 学习 advanced project framework。之前的 hardhat-simpleStorage 学习的是 basic project framework
+
+所谓 framework 其实就是左边目录中的东西
+
+里面有几个新东西：
+
+    .npmignore - 和.gitignore很像，都是忽略掉一些文件。.npmignore目的是如果你想把这个project打包成一个npm包的话，会忽略掉特定文件
+
+    eslint - 自动监测javascript中的所有warning (但不常用，不好用)
+
+    solhint - 自动监测solidity中的所有warning
+    下载：yarn add solhint --dev
+    使用：yarn solhint ./aContract.sol
+         yarn solhint *.sol
+
+
+Script 2 - 安装并使用 hardhat-deploy 来代替之前的 hardhat-ethers
+
+// 安装 hardhat-deploy包，目的是方便管理多个合约的部署
+// 之前的hardhat-simpleStorage中我们使用一个deploy.js脚本来部署合约，
+// 现在改成安装hardhat-deploy包，在terminal中输入命令来部署合约
+
+// 首先安装包
+// yarn add --dev hardhat-deploy
+  // "--dev" 的意思是这个包只在开发环境中使用，生产环境中不需要这个包。
+  // 意味着最终的软件放在github上后，别人下载下来，不用下这个包也可以顺利运行
+
+// 然后在hardhat.config.js中引入
+// require("hardhat-deploy");
+
+// 然后，就不需要这个deploy.js脚本了，
+// 直接在terminal中输入命令来部署合约
+// 创建一个Deploy folder
+
+// yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers
+// 这个命令的目的是
+  // 安装包 hardhat-deploy-ethers
+  // 但将它作为 @nomiclabs/hardhat-ethers 来使用
+
+// 从现在开始
+// yarn hardhat deploy 会运行所有Deploy文件夹中的脚本
+// 为了管理脚本，我们为脚本编号

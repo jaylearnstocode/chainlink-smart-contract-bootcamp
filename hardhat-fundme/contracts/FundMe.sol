@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-// Script 6
-
 // 本章学习目标
 
     // 写一个智能合约，包含：
