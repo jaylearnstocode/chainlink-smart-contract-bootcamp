@@ -31,7 +31,7 @@ module.exports = {
     sepolia: {
       url: Sepolia_RPC_URL, // 3 加入我们想要的测试网
       accounts: [PRIVATE_KEY], // 4 加入我们的真实Sepolia私钥
-      chainId: 11155111,       // 5 加入Sepolia的chainID，每个EVM链都有个单独的chainID
+      chainId: 11155111       // 5 加入Sepolia的chainID，每个EVM链都有个单独的chainID
     }
   },
 

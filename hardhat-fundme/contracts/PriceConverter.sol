@@ -17,13 +17,19 @@ library PriceConverter{
     // 任何调用外部函数都需要2个东西
         // ABI - 实际上就是外部库的interface
         // address - 每一个智能合约都有一个txn hash，也是它的智能合约 address
-    function getPrice() internal view returns (uint256) {
+    function getPrice(AggregatorV3Interface priceFeed) internal view returns (uint256) {
         
+        // 把AggregatorV3Interface priceFeed当做一个FundMe的local variable，
+        // 然后在getPrice（）中通过参数引用，就不需要下面这段代码了
+
+        /*
         // 这是“AggregatorV3Interface.sol” interface 的construcor函数。注意，没有 new 关键字！
         // constructor函数的参数，是监控币价的智能合约地址
         // 智能合约地址在这看：https://docs.chain.link/data-feeds/price-feeds/addresses?page=1
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        
+        */
+
+
         // 现在我们调用.latestRoundData()这个api，return的结果是这样的：
             /*
             function latestRoundData()
@@ -43,8 +49,8 @@ library PriceConverter{
     }
 
     // 真正的转换函数，这里的eth
-    function getConversionRate(uint256 ethAmount) internal view returns (uint256){
-        uint256 ethPrice = getPrice();
+    function getConversionRate(uint256 ethAmount, AggregatorV3Interface priceFeed) internal view returns (uint256){
+        uint256 ethPrice = getPrice(priceFeed);
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1e18;
         return ethAmountInUsd;
     }

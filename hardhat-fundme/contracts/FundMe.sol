@@ -66,11 +66,13 @@ contract FundMe2{
     // immutable字段
             // 相当于 java 中的 final，solidity 的 constructo构造的一个object都可以用这个 immutable 关键字省 gas
 
+    AggregatorV3Interface public priceFeed;
 
     // 这个智能合约实际上就是个class，也拥有自己的constructor。然后运行时创建一个object，
     // 每个人用自己的object.fun(), object.withdraw()
-    constructor(){
+    constructor(address priceFeedAddress) {
         owner = msg.sender;
+        priceFeed = AggregatorV3Interface(priceFeedAddress);
     }
 
 
@@ -85,8 +87,10 @@ contract FundMe2{
         // 1e18 = 1 * 10^18 = 1,000,000,000,000,000,000 Wei = 1 Eth
 
         // 使用 PriceConverter 库 后的新函数：msg.value.getConversionRate()
-        require (msg.value.getConversionRate() >= MINIMUMUSD, "Did not send enough Eth, now reverted."); 
-        
+        require (msg.value.getConversionRate(priceFeed) >= MINIMUMUSD, "Did not send enough Eth, now reverted."); 
+        // msg.value作为getConversionRate()的参数传入, msg.value就是一个uint256
+
+
         // 把打款人计入data structures中
         funders.push(msg.sender);
         addressAndFundsent[msg.sender] = msg.value;

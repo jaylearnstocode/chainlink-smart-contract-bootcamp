@@ -9,8 +9,8 @@ require("@nomicfoundation/hardhat-verify");
 require("dotenv").config();
 
 // referred from Script 15, include 需要的tool，随后可以通过 yarn hardhat 看到这些tools
-require("./tasks/block-number");
-require("./tasks/accounts");
+// require("./tasks/block-number");
+// require("./tasks/accounts");
 
 // referred from Script 18.1, include gas reporter
 require("hardhat-gas-reporter");
