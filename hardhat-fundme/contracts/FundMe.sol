@@ -35,7 +35,7 @@ import "./PriceConverter.sol";
 // 省gas的方法3。用这个代替require（）
 error NotOwner();
 
-contract FundMe2{
+contract FundMe{
 
     // 这是solidity中一个特别的函数：所有uint256的variable可以直接调用 PriceCoverter库 中的函数
     // 比如msg.value.getConversionRate(),编译器会把msg.value作为参数传入getConversionRate()的（）中

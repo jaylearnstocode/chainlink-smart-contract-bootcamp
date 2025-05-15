@@ -1,118 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundme/contracts/FundMe.sol": {
-      "lastModificationDate": 1746901257266,
-      "contentHash": "33cc8ace56a9bb5a7b5284a971032a33",
-      "sourceName": "contracts/FundMe.sol",
-      "solcConfig": {
-        "version": "0.8.8",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./PriceConverter.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.8"
-      ],
-      "artifacts": [
-        "FundMe2"
-      ]
-    },
-    "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundme/contracts/PriceConverter.sol": {
-      "lastModificationDate": 1746901494282,
-      "contentHash": "198f30ad33c74ce192b4371bc7a9e8e6",
-      "sourceName": "contracts/PriceConverter.sol",
-      "solcConfig": {
-        "version": "0.8.8",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "PriceConverter"
-      ]
-    },
-    "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundme/node_modules/@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
-      "lastModificationDate": 1746901525435,
-      "contentHash": "64a3f906dc7696aa3c9fa8454b673be7",
-      "sourceName": "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
-      "solcConfig": {
-        "version": "0.8.8",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "AggregatorV3Interface"
-      ]
-    },
     "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundMe/contracts/FundMe.sol": {
-      "lastModificationDate": 1747119137305,
-      "contentHash": "0647b5721c3c0cf70c5981f235cfca59",
+      "lastModificationDate": 1747295936900,
+      "contentHash": "b78933db2d4e58ceb22f15d901399ad1",
       "sourceName": "contracts/FundMe.sol",
       "solcConfig": {
         "version": "0.8.8",
@@ -151,7 +42,7 @@
         "^0.8.8"
       ],
       "artifacts": [
-        "FundMe2"
+        "FundMe"
       ]
     },
     "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundMe/contracts/PriceConverter.sol": {
@@ -199,7 +90,7 @@
       ]
     },
     "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundMe/node_modules/@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
-      "lastModificationDate": 1746901525435,
+      "lastModificationDate": 1747114957221,
       "contentHash": "64a3f906dc7696aa3c9fa8454b673be7",
       "sourceName": "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
       "solcConfig": {
@@ -239,6 +130,179 @@
       "artifacts": [
         "AggregatorV3Interface"
       ]
+    },
+    "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundMe/node_modules/@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV2V3Interface.sol": {
+      "lastModificationDate": 1747114957221,
+      "contentHash": "a045cdf1098c0a0735bee2f727fee0aa",
+      "sourceName": "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV2V3Interface.sol",
+      "solcConfig": {
+        "version": "0.8.8",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./AggregatorInterface.sol",
+        "./AggregatorV3Interface.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AggregatorV2V3Interface"
+      ]
+    },
+    "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundMe/node_modules/@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorInterface.sol": {
+      "lastModificationDate": 1747114957223,
+      "contentHash": "1739f42cb7ceb036e6fd94b9d9990506",
+      "sourceName": "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorInterface.sol",
+      "solcConfig": {
+        "version": "0.8.8",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AggregatorInterface"
+      ]
+    },
+    "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundMe/node_modules/@chainlink/contracts/src/v0.8/shared/mocks/MockV3Aggregator.sol": {
+      "lastModificationDate": 1747114957225,
+      "contentHash": "147502900f8802595c741c1cd6f75ff2",
+      "sourceName": "@chainlink/contracts/src/v0.8/shared/mocks/MockV3Aggregator.sol",
+      "solcConfig": {
+        "version": "0.8.8",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/AggregatorV2V3Interface.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MockV3Aggregator"
+      ]
+    },
+    "/Users/bangjie/Downloads/Code/chainlinkBootcamp/hardhat-fundMe/contracts/mocks/MockV3Aggregator.sol": {
+      "lastModificationDate": 1747291724980,
+      "contentHash": "310b5739803597e9c32f3221b05def92",
+      "sourceName": "contracts/mocks/MockV3Aggregator.sol",
+      "solcConfig": {
+        "version": "0.8.8",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@chainlink/contracts/src/v0.8/shared/mocks/MockV3Aggregator.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
     }
   }
 }

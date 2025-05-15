@@ -59,6 +59,9 @@ module.exports = {
     token: "ETH"  // 这里设置layer1的主要代币就会显示部署在那个链上的gas fee
   },
   
-  solidity: "0.8.8"
+  // solidity: "0.8.8"
+  // 我们其实可以安装多个solidity的版本，然后编译器可以尝试多种版本的solidity，不至于一次就因为版本不一样无法编译
+  solidity: {
+    compilers: [{version: "0.8.8"}, {version: "0.6.6"}],
+  }
 };
-
